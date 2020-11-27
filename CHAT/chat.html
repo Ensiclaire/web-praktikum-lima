@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafilah Chat</title>
+    <style>
+        body {
+            background-image: url(./chat.jpg);
+            background-size: cover;
+        }
+
+        .container h1{
+            background-color: gainsboro ;
+            padding: 1em;
+            text-align: center;
+            font-size: 1.5em;
+            margin: 1rem;
+        }
+
+        .container #isichat {
+            stroke: black;
+            background-color: rgb(185, 207, 153);
+            padding: 1em;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 1rem;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer form {
+            text-align: center
+        }
+
+        fieldset {
+            background-color: gainsboro;
+            display: flex;
+        }
+
+        button {
+            width: 100px;
+            text-align: center;
+            margin-left: 20px;
+            border-radius: 5px;
+            padding: 5px 15px;
+            background-color: rgb(185, 207, 153);
+        }
+
+        .milik {
+            color: white;
+            text-align: center;
+            text-indent: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kafilah Chat</h1>
+        <div id="isichat"></div>
+    </div>
+
+    <div class="footer">
+        <form onsubmit="return kirim();">
+            <fieldset>
+                <input id="pesan" placeholder="Masukkan Pesan" type="text" name="pesan">
+                <br/>
+                <button type="submit" onclick="return kirim();">Kirim</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="milik">
+        <hr/>
+        <p><i>&copy; November 2020 Dian Novita</i></p>
+    </div>
+
+    <script>
+        function kirim(){
+            let pesan = document.getElementById("pesan").value;
+            document.getElementById("isichat").innerHTML += pesan + "<br/>";
+            document.getElementById("pesan").value = "";
+            return false;
+        }
+    </script>
+
+</body>
+</html>
